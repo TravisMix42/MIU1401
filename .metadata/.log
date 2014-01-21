@@ -21,3 +21,17 @@ Command-line arguments:  -os macosx -ws cocoa -arch x86 -data /Users/travismix/D
 
 !ENTRY org.eclipse.e4.ui.css.core 4 0 2014-01-20 18:16:50.808
 !MESSAGE CSS property 'minimize-visible' has been deprecated: renamed as swt-minimize-visible
+
+!ENTRY com.aptana.core 4 128 2014-01-20 18:27:44.799
+!MESSAGE Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+!ENTRY com.aptana.core 4 128 2014-01-20 18:29:35.752
+!MESSAGE Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
