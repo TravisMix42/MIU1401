@@ -6,3 +6,10 @@
 
 //include our other code files into the project
 Ti.include("MainScreen.js");
+
+//This is the main page or entry point for the application 
+var mainWin = Ti.UI.createWindow({
+	title : "Indie Game List"	
+});
+
+mainWin.open();

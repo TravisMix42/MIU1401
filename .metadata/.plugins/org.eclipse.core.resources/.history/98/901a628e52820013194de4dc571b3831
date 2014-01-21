@@ -1,0 +1,12 @@
+//MainScreen.js
+//by Travis A. Mix
+//January 20, 2014
+
+//This code file will hold the code for our main app screen
+
+var mainScreen = Ti.UI.createWindow({
+	Title : "Indie Game List",
+	color : "red"
+});
+
+
