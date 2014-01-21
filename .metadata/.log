@@ -35,3 +35,17 @@ fatal: Could not read from remote repository.
 
 Please make sure you have the correct access rights
 and the repository exists.
+
+!ENTRY com.aptana.core 4 128 2014-01-20 18:31:29.919
+!MESSAGE Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+!ENTRY com.aptana.core 4 128 2014-01-20 18:36:02.133
+!MESSAGE Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
