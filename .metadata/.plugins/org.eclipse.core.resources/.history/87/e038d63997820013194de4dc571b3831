@@ -1,0 +1,17 @@
+//List.js for IndieGameList application
+//this code controls the list view screen of the application
+//by Travis A. Mix
+//January 21, 2014
+
+//create our list window and view
+var listWindow = Ti.UI.createWindow({
+	title : "Indie Game List"
+});
+
+var listView = Ti.UI.createView({
+	backgroundColor : "#00CCFF",
+	top: 0,
+	bottom : 0,
+	left : 0,
+	right : 0
+});

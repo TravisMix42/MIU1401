@@ -24,10 +24,7 @@ var mainView = Ti.UI.createView({
 //create a label to display some text in the mainView
 var mainLabel = Ti.UI.createLabel({
 	textAlign : "center",
-	text : "Press the button to view the list of my top 5 favorite indie games.",
-	top : 80,
-	left : 20,
-	right : 20
+	text : "Press the button to view the list of my top 5 favorite indie games."
 });
 
 //create a button to allow the user to move to the main app functionality

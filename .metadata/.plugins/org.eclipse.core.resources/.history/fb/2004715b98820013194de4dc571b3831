@@ -16,17 +16,5 @@ var listView = Ti.UI.createView({
 	right : 0
 });
 
-//temporary label to show that the screen is actually loading
-var tempLabel = Ti.UI.createLabel({
-	color : "#FF0000",
-	textAlign : "center",
-	text : "Hey it worked however please replace me with the actual list when you quit being lazy!!!",
-	top : 20,
-	left : 20,
-	right : 20,
-	bottom : 20
-});
-
 //add listView to listWindow
 listWindow.add(listView);
-listView.add(tempLabel);

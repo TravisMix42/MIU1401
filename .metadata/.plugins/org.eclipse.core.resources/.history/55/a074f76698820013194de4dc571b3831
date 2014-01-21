@@ -21,7 +21,7 @@ var tempLabel = Ti.UI.createLabel({
 	color : "#FF0000",
 	textAlign : "center",
 	text : "Hey it worked however please replace me with the actual list when you quit being lazy!!!",
-	top : 20,
+	top : 100,
 	left : 20,
 	right : 20,
 	bottom : 20
@@ -29,4 +29,3 @@ var tempLabel = Ti.UI.createLabel({
 
 //add listView to listWindow
 listWindow.add(listView);
-listView.add(tempLabel);
