@@ -25,8 +25,7 @@ var startButton = Ti.UI.createButton({
 	height : 40,
 	left : 20,
 	right : 20,
-	bottom : 40,
-	borderRadius : 10
+	bottom : 40
 });
 
 //startButton Click event listener

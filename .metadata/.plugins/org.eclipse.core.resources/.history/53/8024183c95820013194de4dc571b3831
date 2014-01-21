@@ -25,14 +25,7 @@ var startButton = Ti.UI.createButton({
 	height : 40,
 	left : 20,
 	right : 20,
-	bottom : 40,
-	borderRadius : 10
-});
-
-//startButton Click event listener
-startButton.addEventListener('click', function(e){
-	//temporary till other page is created
-	Ti.API.info("You clicked the button");
+	bottom : 60
 });
 
 //open the main window and all everything needed to it

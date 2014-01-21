@@ -19,20 +19,13 @@ var mainView = Ti.UI.createView({
 });
 
 //create a button to allow the user to move to the main app functionality
-var startButton = Ti.UI.createButton({
-	title : "Start",
-	backgroundColor : "#00FF00",
+var startButton = Ti.UI.createView({
+	backgroundColor : "#FF0000",
 	height : 40,
-	left : 20,
-	right : 20,
-	bottom : 40,
-	borderRadius : 10
-});
-
-//startButton Click event listener
-startButton.addEventListener('click', function(e){
-	//temporary till other page is created
-	Ti.API.info("You clicked the button");
+	left : 10,
+	right : 10,
+	bottom : 20,
+	text : "Start"
 });
 
 //open the main window and all everything needed to it
