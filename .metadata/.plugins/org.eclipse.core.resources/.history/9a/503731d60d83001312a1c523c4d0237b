@@ -3,9 +3,6 @@
 //by Travis A. Mix
 //January 21, 2014
 
-//include or data.js that hold our json data
-Ti.include("data.js");
-
 //create our list window and view
 var listWindow = Ti.UI.createWindow({
 	title : "Indie Game List"

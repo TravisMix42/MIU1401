@@ -6,4 +6,3 @@
 
 //include our other code files into the project
 Ti.include("MainScreen.js");
-//this is all that is needed here in app.js to make it work a very simple main(entry point) for the app :)
