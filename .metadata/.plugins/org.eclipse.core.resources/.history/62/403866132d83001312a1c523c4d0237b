@@ -84,7 +84,7 @@ var detailWin = Ti.UI.createWindow({
 
 var detailName = Ti.UI.createLabel({
 	textAlign : "left",
-	text : "test"
+	text : games[i].name
 });
 
 //add listView to listWindow

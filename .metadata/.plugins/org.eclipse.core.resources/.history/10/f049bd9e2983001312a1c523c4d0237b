@@ -6,11 +6,9 @@
 //include or data.js that hold our json data
 Ti.include("data.js");
 
-var i = 0;
-
-//create Nav window
-var nav = Ti.UI.iOS.createNavigationWindow({
-	window : listWindow
+//create navgroup
+var nav = Ti.UI.createNavigationGroup({
+	window : listWindow;
 });
 
 //create our list window and view
@@ -48,7 +46,7 @@ for(var i = 0; i < games.length; i++){
 
 //add event listener to the table to open the child views
 tableSec.addEventListener("click", function(e){
-	
+	var i;
 	//debug
 	Ti.API.info(e.row.title);
 	switch(e.row.title)
@@ -71,24 +69,9 @@ tableSec.addEventListener("click", function(e){
 	}
 	//debug
 	Ti.API.info(i);
-	detailWin.open();
-});
-
-//create our detail view window
-var detailWin = Ti.UI.createWindow({
-});
-
-//var detailImage = Ti.UI.createImageView({
-	
-//});
-
-var detailName = Ti.UI.createLabel({
-	textAlign : "left",
-	text : "test"
 });
 
 //add listView to listWindow
-detailWin.add(detailName);
 listWindow.add(listView);
 table1.setData([tableSec]);
 listView.add(table1);

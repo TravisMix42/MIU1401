@@ -6,7 +6,7 @@
 //include or data.js that hold our json data
 Ti.include("data.js");
 
-var i = 0;
+var i;
 
 //create Nav window
 var nav = Ti.UI.iOS.createNavigationWindow({
@@ -76,6 +76,7 @@ tableSec.addEventListener("click", function(e){
 
 //create our detail view window
 var detailWin = Ti.UI.createWindow({
+	title : games[i].name,
 });
 
 //var detailImage = Ti.UI.createImageView({
@@ -84,11 +85,11 @@ var detailWin = Ti.UI.createWindow({
 
 var detailName = Ti.UI.createLabel({
 	textAlign : "left",
-	text : "test"
+	text : games[i].name
 });
 
 //add listView to listWindow
-detailWin.add(detailName);
+
 listWindow.add(listView);
 table1.setData([tableSec]);
 listView.add(table1);

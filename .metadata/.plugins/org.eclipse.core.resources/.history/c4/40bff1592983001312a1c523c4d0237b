@@ -7,8 +7,6 @@
 //include all needed code files
 Ti.include("List.js");
 
-//create navigation group
-
 //main window for the app the starting point and the first page
 var mainScreen = Ti.UI.createWindow({
 	title : "Indie Game List"
