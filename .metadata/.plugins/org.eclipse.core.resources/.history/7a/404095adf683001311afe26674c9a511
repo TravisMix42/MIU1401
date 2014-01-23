@@ -1,0 +1,21 @@
+//detailwin.js
+//the file contains our detail window code for the application
+//by Travis A. Mix
+//January 22, 2014
+
+//include data file
+Ti.include("data.js");
+
+//create our window
+var detWin = Ti.UI.createWindow({
+	title : games[i].name
+});
+
+var detTitleLbl = Ti.UI.createLabel({
+	title : "Name: " + games[i].name,
+	top : 20,
+	left : 0,
+	right : 0
+});
+
+detWin.add(detTitleLbl);
