@@ -82,9 +82,7 @@ table1.addEventListener("click", function(e){
 	});
 	
 	var detLblDev = Ti.UI.createLabel({
-		text : "Developer:\n" +  games[i].developer + "\n\nGenre:\n" + games[i].genre + 
-			"\n\nRelease Date:\n" + games[i].release + "\n\nReview:\n" + games[i].review + 
-			"\n\nAbout the Game:\n" + games[i].about,
+		text : "Developer:\n" +  games[i].developer + "\n\nGenre:\n" + games[i].genre + "\n\nRelease Date:\n" + games[i].release + "\n\nReview:\n" + games[i].review + "\n\nAbout the Game:\n" + games[i].about,
 		top : 200,
 		left : 20,
 		right : 20,

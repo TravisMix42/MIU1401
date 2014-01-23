@@ -44,7 +44,9 @@ for(var i = 0; i < games.length; i++){
 
 //add event listener to the table
 table1.addEventListener("click", function(e){
-	
+	//debug
+	Ti.API.info(e.row);
+	//end debug
 	switch(e.row.title){
 		case "Starbound": 
 			i = 0;
@@ -62,16 +64,15 @@ table1.addEventListener("click", function(e){
 			i = 4;
 			break;
 	}
+	//debug
+	Ti.API.info(i);
+	Ti.API.info(games[i].name);
+	//end debug
 	
 	//create detail window
 	var detWin = Ti.UI.createWindow({
 		title : games[i].name,
 		backgroundColor : "#00CCFF"
-	});
-	
-	//make the views scrollable
-	var detScrollView = Ti.UI.createScrollView({
-		scrollType : "vertical"
 	});
 	
 	var detImage = Ti.UI.createImageView({
@@ -82,18 +83,15 @@ table1.addEventListener("click", function(e){
 	});
 	
 	var detLblDev = Ti.UI.createLabel({
-		text : "Developer:\n" +  games[i].developer + "\n\nGenre:\n" + games[i].genre + 
-			"\n\nRelease Date:\n" + games[i].release + "\n\nReview:\n" + games[i].review + 
-			"\n\nAbout the Game:\n" + games[i].about,
+		text : "Developer:\n" +  games[i].developer + "\n\nGenre:\n" + games[i].genre + "\n\nRelease Date:\n" + games[i].release + "\n\nReview:\n" + games[i].review + "\n\nAbout the Game:\n" + games[i].about,
 		top : 200,
 		left : 20,
 		right : 20,
 		textAlign : "left"
 	});
 	
-	detScrollView.add(detImage);
-	detScrollView.add(detLblDev);
-	detWin.add(detScrollView);
+	detWin.add(detImage);
+	detWin.add(detLblDev);
 	navWin.openWindow(detWin, {animated : true});
 });
 
