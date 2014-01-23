@@ -1,0 +1,38 @@
+//MainScreen.js
+//by Travis A. Mix
+//January 20, 2014
+
+//This code file will hold the code for our main app screen for the IndieGamesList application
+
+//include all needed code files
+Ti.include("List.js");
+
+//create our main window
+var mainWin = Ti.UI.createWindow({
+	backgroundColor : "#FF0000",
+	title : "Indie Game List"
+});
+
+//create the navigation window
+var navWin = Ti.UI.iOS.createNavigationWindow({
+	window : mainWin
+});
+
+//test window
+var testWin = Ti.UI.createWindow({
+	title : "test window",
+	backgroundColor : "blue"
+});
+
+//button test
+var btnTest = Ti.UI.createButton({
+	title : "Open blue window"
+});
+
+btnTest.addEventListener("click", function(){
+	mainWin.openWindow(testWin, {animated : true});
+});
+
+
+mainWin.add(btnTest);
+navWin.open();
