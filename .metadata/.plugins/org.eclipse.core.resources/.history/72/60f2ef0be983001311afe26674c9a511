@@ -10,8 +10,8 @@ Ti.include("List.js");
 
 //create our main window
 var mainWin = Ti.UI.createWindow({
-	title : "Indie Game List",
-	backgroundColor : "#00CCFF"
+	title : "Indie Game List"
+	//backgroundColor : "#00CCFF"
 });
 
 //create nav window

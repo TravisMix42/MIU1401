@@ -11,7 +11,7 @@ Ti.include("List.js");
 //create our main window
 var mainWin = Ti.UI.createWindow({
 	title : "Indie Game List",
-	backgroundColor : "#00CCFF"
+	backgroundColor : "blue"
 });
 
 //create nav window
@@ -42,7 +42,7 @@ var mainBtn = Ti.UI.createButton({
 
 //add event listener for the button
 mainBtn.addEventListener("click", function(){
-	navWin.openWindow(listWindow, {animated : true});
+	navWin.openWindow(listWindow, {animated : true})
 });
 
 mainWin.add(mainBtn);
