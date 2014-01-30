@@ -9,7 +9,7 @@ Ti.include("convertListWin.js");
 //create our login window
 var loginWin = Ti.UI.createWindow({
 	title : "login",
-	backgroundColor : "white"
+	backgroundColor : "#48819d"
 });
 
 //create navigation window
@@ -31,8 +31,7 @@ var userText = Ti.UI.createTextArea({
 	left : 20,
 	right : 20,
 	borderRadius : 10,
-	clearOnEdit : true,
-	borderColor : "black"
+	clearOnEdit : true
 });
 
 
@@ -50,8 +49,7 @@ var passText = Ti.UI.createTextArea({
 	left : 20,
 	right : 20,
 	borderRadius : 10,
-	clearOnEdit : true,
-	borderColor : "black"
+	clearOnEdit : true
 });
 
 //create login button

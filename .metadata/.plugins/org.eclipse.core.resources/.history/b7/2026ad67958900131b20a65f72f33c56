@@ -20,22 +20,14 @@ var listView = Ti.UI.createView({
 
 //create our table 
 var convertTable = Ti.UI.createTableView({
-	style : Ti.UI.iPhone.TableViewStyle.GROUPED
+	style : Ti.UI.iPhone.TableViewStyle.GROUPED,
+	backgroundColor : "#48819d"
 });
 
 //create our table section
 var tableSec = Ti.UI.createTableViewSection({
-        headerTitle : "Temperature Conversions",
+        headerTitle : "Temperature Conversions"
 });
-
-//create our table rows
-for(var i = 0; i < conversionTypes.length; i++){
-        var row = Ti.UI.createTableViewRow({
-                title : conversionTypes[i],
-                hasChild : true
-        });
-        tableSec.add(row);
-}
 
 
 listView.add(convertTable);

@@ -28,15 +28,6 @@ var tableSec = Ti.UI.createTableViewSection({
         headerTitle : "Temperature Conversions",
 });
 
-//create our table rows
-for(var i = 0; i < conversionTypes.length; i++){
-        var row = Ti.UI.createTableViewRow({
-                title : conversionTypes[i],
-                hasChild : true
-        });
-        tableSec.add(row);
-}
-
 
 listView.add(convertTable);
 convertTable.setData([tableSec]);

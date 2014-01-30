@@ -9,12 +9,12 @@ Ti.include("convertListWin.js");
 //create our login window
 var loginWin = Ti.UI.createWindow({
 	title : "login",
-	backgroundColor : "white"
+	backgroundColor : "#48819d"
 });
 
 //create navigation window
 var navWin = Ti.UI.iOS.createNavigationWindow({
-	window : loginWin
+	window : convertListWin
 });
 
 //create our username textbox
@@ -31,8 +31,7 @@ var userText = Ti.UI.createTextArea({
 	left : 20,
 	right : 20,
 	borderRadius : 10,
-	clearOnEdit : true,
-	borderColor : "black"
+	clearOnEdit : true
 });
 
 
@@ -50,8 +49,7 @@ var passText = Ti.UI.createTextArea({
 	left : 20,
 	right : 20,
 	borderRadius : 10,
-	clearOnEdit : true,
-	borderColor : "black"
+	clearOnEdit : true
 });
 
 //create login button
@@ -78,7 +76,7 @@ var errorLbl = Ti.UI.createLabel({
 //button event listener to load convertListWin.js window
 loginBtn.addEventListener("click", function(){
 	//check to make sure that the username and password are correct
-	if(userText.value != "Username" || passText.value != "Password"){
+	if(userText.value != "username" || passText.value != "password"){
 		errorLbl.text = "wrong username or password entered!!!";
 	}
 	//if the username and password are correct create and open the conversions list window
@@ -93,9 +91,6 @@ loginBtn.addEventListener("click", function(){
 		navWin.openWindow(convertListWin, {animated : true});
 		userText.value = "";
 		passText.value = "";
-		convertListWin.add(listView);
-		
-		
 	}
 	
 });
