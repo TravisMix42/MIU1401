@@ -102,8 +102,7 @@ convertTable.addEventListener("click", function(e){
 		textAlign : "left",
 		top : 95,
 		left : 20,
-		right : 20,
-		visible : false
+		right : 20
 	});
 	
 	var convText2 = Ti.UI.createTextArea({
@@ -112,8 +111,7 @@ convertTable.addEventListener("click", function(e){
 		right : 20,
 		borderRadius : 10,
 		borderColor : "black",
-		editable : false,
-		visible : false
+		editable : false
 				
 	});
 	
@@ -122,8 +120,7 @@ convertTable.addEventListener("click", function(e){
 		textAlign : "left",
 		top : 170,
 		left : 20,
-		right : 20,
-		visible : false
+		right : 20
 	});
 	
 	var convText3 = Ti.UI.createTextArea({
@@ -132,8 +129,7 @@ convertTable.addEventListener("click", function(e){
 		right : 20,
 		borderRadius : 10,
 		borderColor : "black",
-		editable : false,
-		visible : false
+		editable : false
 		
 	});
 	
@@ -142,8 +138,7 @@ convertTable.addEventListener("click", function(e){
 		textAlign : "left",
 		top : 245,
 		left : 20,
-		right : 20,
-		visible : false
+		right : 20
 	});
 	
 	var convText4 = Ti.UI.createTextArea({
@@ -152,8 +147,7 @@ convertTable.addEventListener("click", function(e){
 		right : 20,
 		borderRadius : 10,
 		borderColor : "black",
-		editable : false,
-		visible : false
+		editable : false
 	});
 	
 	var convBtn = Ti.UI.createButton({
@@ -175,45 +169,21 @@ convertTable.addEventListener("click", function(e){
 			convText2.value = fToC(convText.value);
 			convText3.value = fToK(convText.value);
 			convText4.value = fToR(convText.value);
-			convText2.visible = true;
-			convText3.visible = true;
-			convText4.visible = true;
-			convLbl2.visible = true;
-			convLbl3.visible = true;
-			convLbl4.visible = true;
 			break;
 		case "Celsius":
 			convText2.value = cToF(convText.value);
 			convText3.value = cToK(convText.value);
 			convText4.value = cToR(convText.value);
-			convText2.visible = true;
-			convText3.visible = true;
-			convText4.visible = true;
-			convLbl2.visible = true;
-			convLbl3.visible = true;
-			convLbl4.visible = true;
 			break;
 		case "Kelvin":
 			convText2.value = kToF(convText.value);
 			convText3.value = kToC(convText.value);
 			convText4.value = kToR(convText.value);
-			convText2.visible = true;
-			convText3.visible = true;
-			convText4.visible = true;
-			convLbl2.visible = true;
-			convLbl3.visible = true;
-			convLbl4.visible = true;
 			break;
 		case "Rankine":
 			convText2.value = rToF(convText.value);
 			convText3.value = rToC(convText.value);
 			convText4.value = rToK(convText.value);
-			convText2.visible = true;
-			convText3.visible = true;
-			convText4.visible = true;
-			convLbl2.visible = true;
-			convLbl3.visible = true;
-			convLbl4.visible = true;
 			break;
 		}
 	});
