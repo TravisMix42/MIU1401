@@ -92,9 +92,7 @@ convertTable.addEventListener("click", function(e){
 		left : 20,
 		right : 20,
 		borderRadius : 10,
-		borderColor : "black",
-		keyboardType : Ti.UI.KEYBOARD_NUMBERS_PUNCTUATION
-		
+		borderColor : "black"
 	});
 	
 	var convLbl2 = Ti.UI.createLabel({
@@ -110,9 +108,7 @@ convertTable.addEventListener("click", function(e){
 		left : 20,
 		right : 20,
 		borderRadius : 10,
-		borderColor : "black",
-		editable : false
-				
+		borderColor : "black"
 	});
 	
 	var convLbl3 = Ti.UI.createLabel({
@@ -128,9 +124,7 @@ convertTable.addEventListener("click", function(e){
 		left : 20,
 		right : 20,
 		borderRadius : 10,
-		borderColor : "black",
-		editable : false
-		
+		borderColor : "black"
 	});
 	
 	var convLbl4 = Ti.UI.createLabel({
@@ -146,8 +140,7 @@ convertTable.addEventListener("click", function(e){
 		left : 20,
 		right : 20,
 		borderRadius : 10,
-		borderColor : "black",
-		editable : false
+		borderColor : "black"
 	});
 	
 	var convBtn = Ti.UI.createButton({
@@ -162,10 +155,6 @@ convertTable.addEventListener("click", function(e){
 	});
 	
 	
-	convBtn.addEventListener("click", function(){
-		Ti.API.info("Button Pressed");
-	});
-	
 	navWin.openWindow(convWin, {animated : true});
 	convWin.add(convView);
 	convWin.add(convLbl);
@@ -178,8 +167,6 @@ convertTable.addEventListener("click", function(e){
 	convWin.add(convText4);
 	convWin.add(convBtn);
 });
-
-
 
 listView.add(convertTable);
 convertTable.setData([tableSec]);

@@ -93,7 +93,7 @@ convertTable.addEventListener("click", function(e){
 		right : 20,
 		borderRadius : 10,
 		borderColor : "black",
-		keyboardType : Ti.UI.KEYBOARD_NUMBERS_PUNCTUATION
+		keyboardType : Ti.UI.KEYBOARD_NUMBER_PUNCTUATION
 		
 	});
 	
@@ -111,7 +111,6 @@ convertTable.addEventListener("click", function(e){
 		right : 20,
 		borderRadius : 10,
 		borderColor : "black",
-		editable : false
 				
 	});
 	
@@ -128,8 +127,7 @@ convertTable.addEventListener("click", function(e){
 		left : 20,
 		right : 20,
 		borderRadius : 10,
-		borderColor : "black",
-		editable : false
+		borderColor : "black"
 		
 	});
 	
@@ -146,8 +144,7 @@ convertTable.addEventListener("click", function(e){
 		left : 20,
 		right : 20,
 		borderRadius : 10,
-		borderColor : "black",
-		editable : false
+		borderColor : "black"
 	});
 	
 	var convBtn = Ti.UI.createButton({

@@ -92,9 +92,7 @@ convertTable.addEventListener("click", function(e){
 		left : 20,
 		right : 20,
 		borderRadius : 10,
-		borderColor : "black",
-		keyboardType : Ti.UI.KEYBOARD_NUMBERS_PUNCTUATION
-		
+		borderColor : "black"
 	});
 	
 	var convLbl2 = Ti.UI.createLabel({
@@ -110,9 +108,7 @@ convertTable.addEventListener("click", function(e){
 		left : 20,
 		right : 20,
 		borderRadius : 10,
-		borderColor : "black",
-		editable : false
-				
+		borderColor : "black"
 	});
 	
 	var convLbl3 = Ti.UI.createLabel({
@@ -120,7 +116,7 @@ convertTable.addEventListener("click", function(e){
 		textAlign : "left",
 		top : 170,
 		left : 20,
-		right : 20
+		right : 20,
 	});
 	
 	var convText3 = Ti.UI.createTextArea({
@@ -128,43 +124,10 @@ convertTable.addEventListener("click", function(e){
 		left : 20,
 		right : 20,
 		borderRadius : 10,
-		borderColor : "black",
-		editable : false
-		
-	});
-	
-	var convLbl4 = Ti.UI.createLabel({
-		text : opt3,
-		textAlign : "left",
-		top : 245,
-		left : 20,
-		right : 20
-	});
-	
-	var convText4 = Ti.UI.createTextArea({
-		top : 270,
-		left : 20,
-		right : 20,
-		borderRadius : 10,
-		borderColor : "black",
-		editable : false
-	});
-	
-	var convBtn = Ti.UI.createButton({
-		title : "Convert",
-		left : 20,
-		right : 20,
-		height : 40,
-		bottom : 40,
-		borderRadius : 10,
-		borderColor : "black",
-		backgroundColor : "green"
+		borderColor : "black"
 	});
 	
 	
-	convBtn.addEventListener("click", function(){
-		Ti.API.info("Button Pressed");
-	});
 	
 	navWin.openWindow(convWin, {animated : true});
 	convWin.add(convView);
@@ -174,11 +137,7 @@ convertTable.addEventListener("click", function(e){
 	convWin.add(convText2);
 	convWin.add(convLbl3);
 	convWin.add(convText3);
-	convWin.add(convLbl4);
-	convWin.add(convText4);
-	convWin.add(convBtn);
 });
-
 
 
 listView.add(convertTable);

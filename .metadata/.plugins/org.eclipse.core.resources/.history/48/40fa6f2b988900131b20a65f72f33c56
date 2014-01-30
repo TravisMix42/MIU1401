@@ -62,7 +62,6 @@ var loginBtn = Ti.UI.createButton({
 	right : 20,
 	height : 40,
 	borderRadius : 10,
-	borderColor : "black",
 	textAlign : "center",
 	backgroundColor : "green"
 });
