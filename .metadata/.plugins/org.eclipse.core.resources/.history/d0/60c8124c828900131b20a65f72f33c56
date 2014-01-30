@@ -1,0 +1,18 @@
+//main code file for the Temperature converter app
+//January 29, 2014
+//by Travis A. Mix
+
+//include our conversions.js so we have 
+//our conversion formulas
+Ti.include("conversions.js");
+
+//create navigation window
+var navWin = Ti.UI.iOS.createNavigationWindow({
+	window : loginWin
+});
+
+//create our login window
+var loginWin = Ti.UI.createWindow({
+	title : "login",
+	backgroundColor : "white"
+});
