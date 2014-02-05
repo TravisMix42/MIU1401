@@ -1,0 +1,41 @@
+//this file holds our objects
+//by Travis Mix for asd 1402
+//on Febuary 5, 2014
+
+//create our dot notation objects
+var Car = new Object();
+	
+var Airplane = new Object();
+
+var Boat = new Object();
+
+var Bike = new Object();
+
+var Skateboard = new Object();
+
+//create our literal notation objects
+var Cat = {
+	
+};
+
+var Dog = {
+	
+};
+
+var Bird = {
+	
+};
+
+var Fish = {
+	
+};
+
+var Kangaroo = {
+	
+};
+
+//store the objects into an array for easy exporting
+var objArray = Array(Car, Airplane, Boat, Bike, Skateboard, Cat, Dog, Bird, Fish, Kangaroo);
+
+//export the objArray
+exports.data = objArray;

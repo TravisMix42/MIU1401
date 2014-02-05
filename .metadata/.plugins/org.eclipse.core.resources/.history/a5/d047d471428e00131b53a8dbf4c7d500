@@ -1,0 +1,37 @@
+//this file holds our objects
+//by Travis Mix for asd 1402
+//on Febuary 5, 2014
+
+var obj1 = new Object();
+
+var obj2 = new Object();
+
+var obj3 = new Object();
+
+var obj4 = new Object();
+
+var obj5 = new Object();
+
+var obj6 = {
+	
+};
+
+var obj7 = {
+	
+};
+
+var obj8 = {
+	
+};
+
+var obj9 = {
+	
+};
+
+var obj10 = {
+	
+};
+
+var objArray = Array(obj1, obj2, obj3, obj4, obj5, obj6, obj7, obj8, obj9, obj10);
+
+exports.data = objArray;
