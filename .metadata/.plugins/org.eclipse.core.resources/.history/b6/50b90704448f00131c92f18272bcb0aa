@@ -1,0 +1,12 @@
+//work.js
+//handles all of our operations to display our data
+//for asdi1402
+//by Travis A. Mix
+//on Febuary 6, 2014
+
+var objs = require("objects");
+var data = [];
+
+data[0] = Ti.UI.createPickerRow({title : "Car"});
+data[1] = Ti.UI.createPickerRow({title : "Airplane"});
+exports.work = data;

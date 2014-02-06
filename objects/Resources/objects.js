@@ -8,9 +8,10 @@ var Car = new Object();
 	Car.doors = 4;
 	Car.engine = "v8";
 	Car.mpg = 9;
+	Car.name = "Car";
 	
 	Car.about = function(){
-		var x = "I am a Car that has " + Car.getDoors() + " doors, a " + Car.getEngine() + " engine, and I get " + Car.getMpg + " miles per gallon,";
+		var x = "I am a Car that has " + Car.getDoors() + " doors, a " + Car.getEngine() + " engine, and I get " + Car.getMpg() + " miles per gallon,";
 		return x;
 	};
 	
@@ -43,6 +44,7 @@ var Airplane = new Object();
 	Airplane.topSpeed = 400;
 	Airplane.numOfPassengers = 4;
 	Airplane.ceilingHeight = 20000;
+	Airplane.name = "Airplane";
 	
 	Airplane.about = function(){
 		var x = "I am an airplane that has a wingspan of " + Airplane.getWingspan() + " feet, a top speed of " + Airplane.getTopSpeed() + " knots." + 
@@ -86,6 +88,7 @@ var Boat = new Object();
 	Boat.hasSail = true;
 	Boat.length = 30;
 	Boat.speed = 40;
+	Boat.name = "Boat";
 	
 	Boat.about = function(){
 		if(Boat.hasSail == true){
@@ -124,8 +127,9 @@ var Boat = new Object();
 	
 var Bike = new Object();
 	Bike.wheelSize = 16;
-	Bike.make = "Schwin";
+	Bike.make = "Schwinn";
 	Bike.numOfGears = 10;
+	Bike.name = "Bike";
 	
 	Bike.about = function(){
 		var x = "I am a " + Bike.getMake() + " bike with " + Bike.getWheelSize() + " inch tires, I also have " + Bike.getNumOfGears() + " gears";
@@ -161,6 +165,7 @@ var Skateboard = new Object();
 	Skateboard.size = 38;
 	Skateboard.material = "wood";
 	Skateboard.brand = "Zero";
+	Skateboard.name = "Skateboard";
 	
 	Skateboard.about = function(){
 		var x = "I am a skateboard made by " + Skateboard.getBrand() + ", I am made out of " + Skateboard.getMaterial() + " and I am " + 
@@ -194,9 +199,10 @@ var Skateboard = new Object();
 	
 //create our literal notation objects
 var Cat = {
-	type : "tabby",
+	breed : "tabby",
 	age : 3,
 	weight : 5,
+	name : "Cat",
 	
 	about : function(){
 		var x = "I am a " + Cat.getType() + " cat that is " + Cat.getAge() + " years old and weigh " + Cat.getWeight() + " pounds";
@@ -205,27 +211,27 @@ var Cat = {
 	},
 	
 	getType : function(){
-		return type;
+		return Cat.breed;
 	},
 	
 	setType : function(newType){
-		type = newType;
+		Cat.breed = newType;
 	},
 	
 	getAge : function(){
-		return age;
+		return Cat.age;
 	},
 	
 	setAge : function(newAge){
-		age = newAge;
+		Cat.age = newAge;
 	},
 	
 	getWeight : function(){
-		return weight;
+		return Cat.weight;
 	},
 	
 	setWeight : function(newWeight){
-		weight = newWeight;
+		Cat.weight = newWeight;
 	}
 	
 	
@@ -233,9 +239,10 @@ var Cat = {
 };
 
 var Dog = {
-	type : "lab",
+	breed : "lab",
 	age : 6,
 	weight : 25,
+	name : "Dog",
 	
 	about : function(){
 		var x = "I am a " + Dog.getType() + " dog that is " + Dog.getAge() + " years old and weigh " + Dog.getWeight() + " pounds";
@@ -244,34 +251,35 @@ var Dog = {
 	},
 	
 	getType : function(){
-		return type;
+		return Dog.breed;
 	},
 	
 	setType : function(newType){
-		type = newType;
+		Dog.breed = newType;
 	},
 	
 	getAge : function(){
-		return age;
+		return Dog.age;
 	},
 	
 	setAge : function(newAge){
-		age = newAge;
+		Dog.age = newAge;
 	},
 	
 	getWeight : function(){
-		return weight;
+		return Dog.weight;
 	},
 	
 	setWeight : function(newWeight){
-		weight = newWeight;
+		Dog.weight = newWeight;
 	}
 };
 
 var Bird = {
-	type : "parrot",
+	breed : "parrot",
 	age : 1,
 	weight : 10,
+	name : "Bird",
 	
 	about : function(){
 		var x = "I am a " + Bird.getType() + " that is " + Bird.getAge() + " year old and weigh " + Bird.getWeight() + " pounds";
@@ -280,34 +288,35 @@ var Bird = {
 	},
 	
 	getType : function(){
-		return type;
+		return Bird.breed;
 	},
 	
 	setType : function(newType){
-		type = newType;
+		Bird.breed = newType;
 	},
 	
 	getAge : function(){
-		return age;
+		return Bird.age;
 	},
 	
 	setAge : function(newAge){
-		age = newAge;
+		Bird.age = newAge;
 	},
 	
 	getWeight : function(){
-		return weight;
+		return Bird.weight;
 	},
 	
 	setWeight : function(newWeight){
-		weight = newWeight;
+		Bird.weight = newWeight;
 	}
 };
 
 var Fish = {
-	type : "flounder",
+	breed : "flounder",
 	age : 2,
 	weight : 6,
+	name : "Fish",
 	
 	about : function(){
 		var x = "I am a " + Fish.getType() + " that is " + Fish.getAge() + " years old and weigh " + Fish.getWeight() + " pounds";
@@ -316,34 +325,35 @@ var Fish = {
 	},
 	
 	getType : function(){
-		return type;
+		return Fish.breed;
 	},
 	
 	setType : function(newType){
-		type = newType;
+		Fish.breed = newType;
 	},
 	
 	getAge : function(){
-		return age;
+		return Fish.age;
 	},
 	
 	setAge : function(newAge){
-		age = newAge;
+		Fish.age = newAge;
 	},
 	
 	getWeight : function(){
-		return weight;
+		return Fish.weight;
 	},
 	
 	setWeight : function(newWeight){
-		weight = newWeight;
+		Fish.weight = newWeight;
 	}
 };
 
 var Kangaroo = {
-	type : "austrailian",
+	breed : "austrailian",
 	age : 7,
 	weight : 75,
+	name : "Kangaroo",
 	
 	about : function(){
 		var x = "I am a " + Kangaroo.getType() + " Kangaroo that is " + Kangaroo.getAge() + " years old and weigh " + Kangaroo.getWeight() + " pounds";
@@ -352,27 +362,27 @@ var Kangaroo = {
 	},
 	
 	getType : function(){
-		return type;
+		return Kangaroo.breed;
 	},
 	
 	setType : function(newType){
-		type = newType;
+		Kangaroo.breed = newType;
 	},
 	
 	getAge : function(){
-		return age;
+		return Kangaroo.age;
 	},
 	
 	setAge : function(newAge){
-		age = newAge;
+		Kangaroo.age = newAge;
 	},
 	
 	getWeight : function(){
-		return weight;
+		return Kangaroo.weight;
 	},
 	
 	setWeight : function(newWeight){
-		weight = newWeight;
+		Kangaroo.weight = newWeight;
 	}
 };
 
