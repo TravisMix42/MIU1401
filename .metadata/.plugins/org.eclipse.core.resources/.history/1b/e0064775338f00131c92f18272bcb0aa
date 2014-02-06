@@ -3,7 +3,7 @@
 //on Febuary 5, 2014
 
 //create our dot notation objects
-//simple car object
+//simple car object not building a racing game here 
 var Car = new Object();
 	Car.doors = 4;
 	Car.engine = "v8";
