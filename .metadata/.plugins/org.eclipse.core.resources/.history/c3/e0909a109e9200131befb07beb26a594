@@ -1,0 +1,11 @@
+//remoteDatas app for week 2 asdi1402
+//by Travis A. Mix
+//on Febuary 10, 2014
+
+//create our main window
+
+var main = Ti.UI.createWindow();
+
+var navWin = Ti.UI.iOS.createNavigationWindow({
+	window : main
+});
