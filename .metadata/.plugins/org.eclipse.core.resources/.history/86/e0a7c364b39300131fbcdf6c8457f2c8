@@ -17,7 +17,7 @@ var xhr = Ti.Network.createHTTPClient({
 		Ti.API.info(this.responseText);
 		jsonData = JSON.parse(this.responseText);
 		
-		for(var i = 0; i < 10; i++){
+		for(var i = 0; i < 20; i++){
 			datastuff = jsonData.data.children[i];
 			row = Ti.UI.createTableViewRow({
 				height : 60
@@ -70,27 +70,6 @@ xhr.send();
 var table1 = Ti.UI.createTableView();
 
 table1.addEventListener("click", function(e){
-	switch(e.index){
-		case 0:
-			break;
-		case 1:
-			break;
-		case 2:
-			break;
-		case 3:
-			break;
-		case 4:
-			break;
-		case 5:
-			break;
-		case 6:
-			break;
-		case 7:
-			break;
-		case 8:
-			break;
-		case 9:
-			break;
-	}
+	Ti.API.info(e.info);
 });
 

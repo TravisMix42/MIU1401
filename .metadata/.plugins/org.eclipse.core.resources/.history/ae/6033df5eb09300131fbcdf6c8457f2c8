@@ -4,8 +4,8 @@
 
 
 //imports  exports not working, did i ever mention how much i hate titanium
-//var table = require("data");
-Ti.include("data.js");
+var table = require("data");
+
 //create our main window
 var main = Ti.UI.createWindow({
 	title : "main"
@@ -25,6 +25,6 @@ var mainView = Ti.UI.createView({
 	backgroundColor : "#C3E4ED"
 });
 
-mainView.add(table1);
+mainView.add(table.table1);
 main.add(mainView);
 navWin.open();
