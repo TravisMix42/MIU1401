@@ -4,44 +4,48 @@
 //on Febuary 10, 2014
 //using reddit api
 
-//create our array to for exporting
-var rowDataTitle = [];
-var rowDataAuthor = [];
+var jsonData;
+var tableData = [];
+var jsonAuthorList = [];
+var row;
+var titles = [];
+var authors = [];
+var lbl1;
 
-//create our remoteRespone function
-var remoteResponse = function(){
-	Ti.API.info(this.responseText);
-	var jsonData = JSON.parse(this.responseText);
-	
-	for(var i = 0; i < 10; i++){
-		rowDataTitle.push(jsonData.data.children[i].data.title);
-		rowDataAuthor.push(jsonData.data.children[i].data.author);
-		
-		Ti.API.info(rowDataAuthor[i]);
-		Ti.API.info(rowDataTitle[i]);
-		
-	}
-	//var testTitle = jsonData.data.children[0].data.title;
-	//var testAuthor = jsonData.data.children[0].data.author;
-	
-	
+
+var remoteError = function(e) {
+    Ti.API.debug("Status: " + this.status);
+    Ti.API.debug("Text: " + this.responseText);
+    Ti.API.debug("Error: " + e.error);
+    alert("There's a problem pulling remote data");
 };
 
-//create our remoteError function
-var remoteError = function(e){
-	Ti.API.info("Status: " + this.status);
-	Ti.API.info("Text: " + this.responseText);
-	Ti.API.info("Error: " + e.error);
-};
-
-//create our http client object
 var xhr = Ti.Network.createHTTPClient({
-	onload : remoteResponse,
-	onError : remoteError,
-	timeout : 10000
+    onload : function(){
+    	Ti.API.info(this.responseText);
+    jsonData = JSON.parse(this.responseText);
+    Ti.API.info("Author: " + jsonData.data.children[0].data.author);
+    for(var i = 0; i < 10; i++){
+    	titles[i] = jsonData.data.children[i].data.title;
+    	authors[i] = jsonData.data.children[i].data.author;
+    	Ti.API.info(authors[i]);
+    	Ti.API.info(titles[i]);
+    }
+    //create a label
+	lbl1 = Ti.UI.createLabel({
+		text : "" + titles[1],
+		height : "auto",
+		width : "auto",
+		backgroundColor : "red"
+	});
+
+    },
+    onerror : remoteError,
+    timeout : 5000
 });
 
-//open the remote server and get info
-xhr.open("GET", "http://api.reddit.com/");
+xhr.open("GET", "http://api.reddit.com");
 xhr.send();
+
+exports.data = lbl1;
 

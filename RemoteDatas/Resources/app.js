@@ -3,8 +3,7 @@
 //on Febuary 10, 2014
 
 
-//imports
-var lists = require("list");
+//imports  exports not working, did i ever mention how much i hate titanium
 var data = require("data");
 
 //create our main window
@@ -26,6 +25,6 @@ var mainView = Ti.UI.createView({
 	backgroundColor : "#C3E4ED"
 });
 
-mainView.add(lists.list);
+mainView.add(data.lbl1);
 main.add(mainView);
 navWin.open();

@@ -1,0 +1,13 @@
+//holds our list creation code 
+//asdi1402 week 2
+//by Travis A. Mix
+//Febuary 10,2014
+
+//var rows = [{title : "apple"}, {title : "banana"}, {title : "fish"}];
+//import our data.js rowData array
+var data = require("data");
+
+
+
+
+

@@ -1,0 +1,53 @@
+//data gets our remote data so we can put it in our table view
+//asdi1402 week 2
+//by Travis A. Mix
+//on Febuary 10, 2014
+//using reddit api
+
+var jsonData;
+var tableData = [];
+var jsonAuthorList = [];
+var row;
+
+var remoteResponse = function() {
+    Ti.API.info(this.responseText);
+    jsonData = JSON.parse(this.responseText);
+    Ti.API.info("Author: " + jsonData.data.children[0].data.author);
+    jsonAuthorList[0] = jsonData.data.children[0].data.author;
+    jsonAuthorList[1] = jsonData.data.children[1].data.author;
+    Ti.API.info(jsonAuthorList[1]);
+
+
+var remoteError = function(e) {
+    Ti.API.debug("Status: " + this.status);
+    Ti.API.debug("Text: " + this.responseText);
+    Ti.API.debug("Error: " + e.error);
+    alert("There's a problem pulling remote data");
+};
+
+var xhr = Ti.Network.createHTTPClient({
+    onload : remoteResponse,
+    onerror : remoteError,
+    timeout : 5000
+});
+
+xhr.open("GET", "http://api.reddit.com");
+xhr.send();
+
+//create our table view
+var table = Ti.UI.createTableView({
+	
+});
+
+
+for(var i = 0; i < 10; i++){
+	
+	row = Ti.UI.createTableViewRow({
+		height : "auto",
+		title : jsonData.data.children[1].data.author
+	});
+	tableData.push(row);
+}
+
+
+table.setData([tableData]);
