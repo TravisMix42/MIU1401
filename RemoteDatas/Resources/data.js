@@ -11,13 +11,14 @@ var datastuff;
 var title;
 var row;
 
+
 //setup our http client
 var xhr = Ti.Network.createHTTPClient({
 	onload : function(){
 		Ti.API.info(this.responseText);
 		jsonData = JSON.parse(this.responseText);
 		
-		for(var i = 0; i < 10; i++){
+		for(var i = 0; i < jsonData.data.children.length; i++){
 			datastuff = jsonData.data.children[i];
 			row = Ti.UI.createTableViewRow({
 				height : 60
@@ -38,16 +39,22 @@ var xhr = Ti.Network.createHTTPClient({
 				height : 10
 			});
 			
-			var tImg= Ti.UI.createImageView({
+			var tImg = Ti.UI.createImageView({
 				image : datastuff.data.thumbnail,
 				left : 5
 			});
 			
+			if(datastuff.data.thumbnail.slice(0,4) != "http")
+			{
+				tImg.image = "img/noImage.png";
+			}
+				
 			row.add(lbl1);
 			row.add(lbl2);
 			row.add(tImg);
 			tblData.push(row);
 		}
+		
 		
 		table1.setData(tblData);
 	},
@@ -67,30 +74,45 @@ xhr.open("GET", "http://api.reddit.com");
 xhr.send();
 
 //create our table
-var table1 = Ti.UI.createTableView();
+var table1 = Ti.UI.createTableView({
+	style : Ti.UI.iPhone.ListViewStyle.GROUPED,
+	backgroundColor : "#C3E4ED"
+});
 
 table1.addEventListener("click", function(e){
-	switch(e.index){
-		case 0:
-			break;
-		case 1:
-			break;
-		case 2:
-			break;
-		case 3:
-			break;
-		case 4:
-			break;
-		case 5:
-			break;
-		case 6:
-			break;
-		case 7:
-			break;
-		case 8:
-			break;
-		case 9:
-			break;
-	}
+	
+	var infoWin = Ti.UI.createWindow({
+		title : jsonData.data.children[e.index].data.author,
+		backgroundColor : "#C3E4ED"
+	});
+	
+	var infoScroll = Ti.UI.createScrollView({
+		backgroundColor : "#C3E4ED"
+	});
+	
+	var infoLbl1 = Ti.UI.createLabel({
+		backgroundColor : "#C3E4ED",
+		height : 100,
+		left : 10, 
+		top : 0,
+		right : 10,
+		text : jsonData.data.children[e.index].data.title,
+		textAlign : "center"
+	});
+	
+	var infoWeb = Ti.UI.createWebView({
+		url : jsonData.data.children[e.index].data.url,
+		top : 100,
+		left : 0,
+		right : 0,
+		bottom : 0,
+		height : "auto"
+	});
+	
+	infoScroll.add(infoWeb);
+	infoScroll.add(infoLbl1);
+	infoWin.add(infoScroll);
+	navWin.openWindow(infoWin, {animated : true});
 });
+
 
