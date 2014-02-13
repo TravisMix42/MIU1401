@@ -21,8 +21,7 @@ var xhr = Ti.Network.createHTTPClient({
 		for(var i = 0; i < jsonData.data.children.length; i++){
 			datastuff = jsonData.data.children[i];
 			row = Ti.UI.createTableViewRow({
-				height : 60,
-				hasChild : true
+				height : 60
 			});
 			
 			var lbl1 = Ti.UI.createLabel({
