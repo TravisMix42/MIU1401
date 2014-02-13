@@ -98,8 +98,7 @@ table1.addEventListener("click", function(e){
 		top : 0,
 		right : 10,
 		text : jsonData.data.children[e.index].data.title,
-		textAlign : "center",
-		font : {fontSize : 14}
+		textAlign : "center"
 	});
 	
 	var infoWeb = Ti.UI.createWebView({

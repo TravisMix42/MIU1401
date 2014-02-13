@@ -27,14 +27,14 @@ var xhr = Ti.Network.createHTTPClient({
 			
 			var lbl1 = Ti.UI.createLabel({
 				text : "by " + datastuff.data.author,
-				font : {fontSize : 12},
+				font : {fontSize : 14},
 				left : 90,
 				bottom : 5
 			});
 			
 			var lbl2 = Ti.UI.createLabel({
 				text : datastuff.data.title,
-				font : {fontSize : 16},
+				font : {fontSize : 20},
 				left : 90,
 				top : 5,
 				height : 10
@@ -93,18 +93,17 @@ table1.addEventListener("click", function(e){
 	
 	var infoLbl1 = Ti.UI.createLabel({
 		backgroundColor : "#C3E4ED",
-		height : 120,
+		height : 100,
 		left : 10, 
 		top : 0,
 		right : 10,
 		text : jsonData.data.children[e.index].data.title,
-		textAlign : "center",
-		font : {fontSize : 14}
+		textAlign : "center"
 	});
 	
 	var infoWeb = Ti.UI.createWebView({
 		url : jsonData.data.children[e.index].data.url,
-		top : 120,
+		top : 100,
 		left : 0,
 		right : 0,
 		bottom : 0,
