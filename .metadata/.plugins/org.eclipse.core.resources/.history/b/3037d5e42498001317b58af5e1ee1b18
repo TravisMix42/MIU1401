@@ -10,7 +10,7 @@ Ti.include("view.js");
 
 //create our main window
 var main = Ti.UI.createWindow({
-	title : "Cruddy",
+	title : "cruddy",
 	backgroundColor : "#707070"
 });
 
@@ -26,7 +26,7 @@ var addBtn = Ti.UI.createButton({
 	borderRadius : 10,
 	backgroundColor : "blue",
 	color : "#707070",
-	title : "Add Data"
+	title : "Add"
 });
 
 //make a button to allow the user to view the database
@@ -49,11 +49,12 @@ var navWin = Ti.UI.iOS.createNavigationWindow({
 
 //add our event listeners for our buttons
 addBtn.addEventListener("click", function(){
+	Ti.API.info("addBtn Clicked");
 	navWin.openWindow(addWin, {animated : true});
 });
 
 viewBtn.addEventListener("click", function(){
-	navWin.openWindow(viewWin, {animated : true});
+	Ti.API.info("viewBtn clicked");
 });
 
 //add our buttons to the main window
