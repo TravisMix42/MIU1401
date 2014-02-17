@@ -3,9 +3,6 @@
 //on Febuary 17, 2014
 //for asdi1402 week 3
 
-//include needed stuff here
-Ti.include("add.js");
-
 
 //create our main window
 var main = Ti.UI.createWindow({
@@ -49,7 +46,6 @@ var navWin = Ti.UI.iOS.createNavigationWindow({
 //add our event listeners for our buttons
 addBtn.addEventListener("click", function(){
 	Ti.API.info("addBtn Clicked");
-	navWin.openWindow(addWin, {animated : true});
 });
 
 viewBtn.addEventListener("click", function(){

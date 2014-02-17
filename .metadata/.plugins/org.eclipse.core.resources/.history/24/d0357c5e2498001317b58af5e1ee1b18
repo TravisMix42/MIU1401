@@ -49,7 +49,6 @@ var navWin = Ti.UI.iOS.createNavigationWindow({
 //add our event listeners for our buttons
 addBtn.addEventListener("click", function(){
 	Ti.API.info("addBtn Clicked");
-	navWin.openWindow(addWin, {animated : true});
 });
 
 viewBtn.addEventListener("click", function(){
