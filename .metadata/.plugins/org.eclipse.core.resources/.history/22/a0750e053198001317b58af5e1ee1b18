@@ -82,14 +82,7 @@ var subBtn = Ti.UI.createButton({
 	right : 20,
 	left : 80,
 	height : 40,
-	top : 200,
-	backgroundColor : "green",
-	color : "#707070"
-});
-
-//add our eventlistener to our subBtn
-subBtn.addEventListener("click", function(){
-	Ti.API.info("Submit button clicked");
+	top : 200
 });
 
 //add our stuff to the addWin window

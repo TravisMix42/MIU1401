@@ -75,22 +75,6 @@ var phoneTxtField = Ti.UI.createTextField({
 	textAlign : "center"
 });
 
-//add our submit button
-var subBtn = Ti.UI.createButton({
-	title : "SUBMIT",
-	borderRadius : 10,
-	right : 20,
-	left : 80,
-	height : 40,
-	top : 200,
-	backgroundColor : "green",
-	color : "#707070"
-});
-
-//add our eventlistener to our subBtn
-subBtn.addEventListener("click", function(){
-	Ti.API.info("Submit button clicked");
-});
 
 //add our stuff to the addWin window
 addWin.add(nameLbl);
@@ -99,4 +83,4 @@ addWin.add(emailLbl);
 addWin.add(emailTxtField);
 addWin.add(phoneLbl);
 addWin.add(phoneTxtField);
-addWin.add(subBtn);
+

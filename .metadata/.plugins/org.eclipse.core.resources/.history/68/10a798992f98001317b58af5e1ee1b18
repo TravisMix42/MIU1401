@@ -11,12 +11,18 @@ var addWin = Ti.UI.createWindow({
 	backgroundColor : "#707070"
 });
 
+var doneBtn = Ti.UI.createButton({
+	title : "Done",
+	style : Ti.UI.iPhone.SystemButtonStyle.DONE
+});
+
+
 //create our form so the user can add information to the database
 //create our name label
 var nameLbl = Ti.UI.createLabel({
 	text : "Name: ",
 	height : 40,
-	top : 20,
+	top : 60,
 	left : 10,
 	right : 60,
 	color : "black"
@@ -25,7 +31,7 @@ var nameLbl = Ti.UI.createLabel({
 //create our name text field
 var nameTxtField = Ti.UI.createTextField({
 	height : 40,
-	top : 20,
+	top : 60,
 	left : 80,
 	right : 20,
 	backgroundColor : "white",
@@ -37,7 +43,7 @@ var nameTxtField = Ti.UI.createTextField({
 var emailLbl = Ti.UI.createLabel({
 	text : "Email: ",
 	height : 40,
-	top : 80,
+	top : 120,
 	left : 10,
 	right : 60,
 	color : "black"
@@ -46,9 +52,10 @@ var emailLbl = Ti.UI.createLabel({
 //create our email text field
 var emailTxtField = Ti.UI.createTextField({
 	height : 40,
-	top : 80,
+	top : 120,
 	left : 80,
 	right : 20,
+	keyboardType : Ti.UI.KEYBOARD_EMAIL,
 	backgroundColor : "white",
 	borderRadius : 10,
 	textAlign : "center"
@@ -58,7 +65,7 @@ var emailTxtField = Ti.UI.createTextField({
 var phoneLbl = Ti.UI.createLabel({
 	text : "Phone: ",
 	height : 40,
-	top : 140,
+	top : 180,
 	left : 10, 
 	right : 60,
 	color : "black"
@@ -67,30 +74,18 @@ var phoneLbl = Ti.UI.createLabel({
 //add our phone text field
 var phoneTxtField = Ti.UI.createTextField({
 	height : 40,
-	top : 140,
+	top : 180,
 	left : 80,
 	right : 20,
+	keyboardType : Ti.UI.KEYBOARD_DECIMAL_PAD,
+	keyboardToolbar : [done],
+	keyboardToolbarHeight : 40,
 	backgroundColor : "white",
 	borderRadius : 10,
 	textAlign : "center"
 });
 
-//add our submit button
-var subBtn = Ti.UI.createButton({
-	title : "SUBMIT",
-	borderRadius : 10,
-	right : 20,
-	left : 80,
-	height : 40,
-	top : 200,
-	backgroundColor : "green",
-	color : "#707070"
-});
 
-//add our eventlistener to our subBtn
-subBtn.addEventListener("click", function(){
-	Ti.API.info("Submit button clicked");
-});
 
 //add our stuff to the addWin window
 addWin.add(nameLbl);
@@ -99,4 +94,4 @@ addWin.add(emailLbl);
 addWin.add(emailTxtField);
 addWin.add(phoneLbl);
 addWin.add(phoneTxtField);
-addWin.add(subBtn);
+
