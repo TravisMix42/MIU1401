@@ -8,9 +8,7 @@ Ti.include("add.js");
 Ti.include("view.js");
 
 //create our database
-var db = Ti.Database.open('myDb');
-db.execute('CREATE TABLE IF NOT EXISTS contacts(name TEXT, email TEXT, phone TEXT)');
-db.close();
+
 
 
 //create our main window

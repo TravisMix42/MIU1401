@@ -91,7 +91,7 @@ var subBtn = Ti.UI.createButton({
 subBtn.addEventListener("click", function(){
 	Ti.API.info("Submit button clicked");
 	db = Ti.Database.open('myDb');
-	db.execute('INSERT INTO contacts(name, email, phone) VALUES (?, ?, ?)', nameTxtField.value, emailTxtField.value, phoneTxtField.value);
+	db.execute('INSERT INTO contacts(name, email, phone) VALUES (?, ?, ?)', "george", "george@yahoo.com", "555 555 1515");
 	var test1 = db.execute('SELECT name, email, phone FROM contacts');
 	var name = test1.fieldByName('name');
 	var email = test1.fieldByName('email');

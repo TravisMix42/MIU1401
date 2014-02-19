@@ -24,6 +24,7 @@ var nameLbl = Ti.UI.createLabel({
 
 //create our name text field
 var nameTxtField = Ti.UI.createTextField({
+	hintText : "name",
 	height : 40,
 	top : 20,
 	left : 80,
@@ -90,14 +91,6 @@ var subBtn = Ti.UI.createButton({
 //add our eventlistener to our subBtn
 subBtn.addEventListener("click", function(){
 	Ti.API.info("Submit button clicked");
-	db = Ti.Database.open('myDb');
-	db.execute('INSERT INTO contacts(name, email, phone) VALUES (?, ?, ?)', nameTxtField.value, emailTxtField.value, phoneTxtField.value);
-	var test1 = db.execute('SELECT name, email, phone FROM contacts');
-	var name = test1.fieldByName('name');
-	var email = test1.fieldByName('email');
-	var phone = test1.fieldByName('phone');
-	Ti.API.info(name + ", " + email + ", " + phone);	
-	db.close();
 });
 
 //add our stuff to the addWin window

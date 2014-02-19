@@ -10,4 +10,3 @@ var viewWin = Ti.UI.createWindow({
 	title : "View / Edit",
 	backgroundColor : "#707070"
 });
-
