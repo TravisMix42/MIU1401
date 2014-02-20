@@ -1,0 +1,101 @@
+//view.js code is for the edit/view view of the cruddy application
+//this is the view that will allow the user to see information in 
+//the database
+//by Travis A. Mix
+//on Febuary 17, 2014
+//for asdi1402 week 3
+
+//vars 
+var rows;
+var name;
+var email;
+var phone;
+var row;
+
+
+var table1 = Ti.UI.createTableView({
+	
+});
+
+//initialize our rows
+var createRows = function(){
+	var rowData = [];
+	
+	//open our database
+	var db = Ti.Database.open('myDb');
+	//get info from database
+	rows = db.execute('SELECT * FROM contacts');
+	
+	while(rows.isValidRow()){
+		name = rows.fieldByName('name');
+		email = rows.fieldByName('email');
+		phone = rows.fieldByName('phone');
+		
+		row = Ti.UI.createTableViewRow({
+			height : 'auto'		
+		});
+		
+		var lbl1 = Ti.UI.createLabel({
+			text : "Name: " + name,
+			font : {fontSize : 12},
+			left : 10,
+			top : 0
+		});
+		
+		var lbl2 = Ti.UI.createLabel({
+			text : "Phone: " + phone,
+			font : {fontSize : 10},
+			top : 15,
+			left : 10
+		});
+		
+		var lbl3 = Ti.UI.createLabel({
+			text : "Email: " + email,
+			font : {fontSize : 10},
+			top : 27,
+			left : 10
+		});
+		
+		row.add(lbl1);
+		row.add(lbl2);
+		row.add(lbl3);
+		rowData.push(row);
+		rows.next();
+	}
+	table1.setData(rowData);
+};
+
+
+//create our view window 
+var viewWin = Ti.UI.createWindow({
+	title : "View / Edit",
+	backgroundColor : "#707070"
+});
+
+
+//create a edit button in our nav bar
+var editBtn = Ti.UI.createButton({
+	title : "Edit"
+});
+
+var cancelBtn = Ti.UI.createButton({
+	title : "Cancel",
+	style : Ti.UI.iPhone.SystemButtonStyle.DONE
+});
+
+editBtn.addEventListener("click", function(){
+	viewWin.setRightNavButton(cancelBtn);
+	table1.editing = true;
+});
+
+cancelBtn.addEventListener("click", function(){
+	viewWin.setRightNavButton(editBtn);
+	table1.editing = false;
+});
+
+table1.addEventListener("delete", function(e){
+	db.execute("DELETE FROM contacts WHERE id = ?", e.rowData.id);
+});
+
+viewWin.setRightNavButton(editBtn);
+viewWin.add(table1);

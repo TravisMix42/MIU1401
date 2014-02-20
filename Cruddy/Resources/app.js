@@ -4,3 +4,4 @@
 //for week 3 of asdi 1402
 
 Ti.include("main.js");
+createRows();

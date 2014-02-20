@@ -5,6 +5,9 @@
 //on Febuary 17, 2014
 //for asdi1402 week 3
 
+//include view.js
+Ti.include("view.js");
+
 //create our add window
 var addWin = Ti.UI.createWindow({
 	title : "Add Data",
@@ -92,12 +95,11 @@ subBtn.addEventListener("click", function(){
 	Ti.API.info("Submit button clicked");
 	db = Ti.Database.open('myDb');
 	db.execute('INSERT INTO contacts(name, email, phone) VALUES (?, ?, ?)', nameTxtField.value, emailTxtField.value, phoneTxtField.value);
-	var test1 = db.execute('SELECT name, email, phone FROM contacts');
-	var name = test1.fieldByName('name');
-	var email = test1.fieldByName('email');
-	var phone = test1.fieldByName('phone');
-	Ti.API.info(name + ", " + email + ", " + phone);	
+	nameTxtField.value = "";
+	emailTxtField.value = "";
+	phoneTxtField.value = "";
 	db.close();
+	createRows();
 });
 
 //add our stuff to the addWin window

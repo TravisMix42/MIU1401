@@ -1,0 +1,48 @@
+//view.js code is for the edit/view view of the cruddy application
+//this is the view that will allow the user to see information in 
+//the database
+//by Travis A. Mix
+//on Febuary 17, 2014
+//for asdi1402 week 3
+
+//vars 
+var rows;
+var name;
+var email;
+var phone;
+var row;
+
+//initialize our rows
+var createRows = function(){
+	var rowData = [];
+	
+	//open our database
+	var db = Ti.Database.open('myDb');
+	//get info from database
+	rows = db.execute('SELECT * FROM contacts');
+	
+	while(rows.isValidRow()){
+		name = rows.fieldByName('name');
+		email = rows.fieldByName('email');
+		phone = rows.fieldByName('phone');
+		
+	
+	}
+	
+	
+};
+
+//create our view window 
+var viewWin = Ti.UI.createWindow({
+	title : "View / Edit",
+	backgroundColor : "#707070"
+});
+
+var table1 = Ti.UI.createTableView({
+	
+});
+
+//open our database again
+
+
+viewWin.add(table1);
