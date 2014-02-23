@@ -1,0 +1,18 @@
+//main.js file for the hungry app
+//by Travis Mix
+//on Febuary 23, 2014
+//for Doug Arley asdi 1402
+
+
+//create our main window
+var main = Ti.UI.createWindow({
+	title : "main",
+	backgroundColor : "#040404"
+});
+
+//create our navigation window and point to main window
+var navWin = Ti.UI.iOS.createNavigationWindow({
+	window : main
+});
+
+navWin.open();
