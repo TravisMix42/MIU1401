@@ -1,0 +1,119 @@
+//fav.js for hungry app
+//by Travis A. Mix
+//on Febuary 26, 2014
+//for Doug Arley asdi 1402 week 4
+
+
+//vars 
+var rows;
+var author;
+var title;
+var image;
+var urls;
+var id;
+var row;
+
+
+
+//initialize our rows
+var createRows = function(){
+	var rowData = [];
+	
+	//open our database
+	var db = Ti.Database.open('myDb');
+	//get info from database
+	rows = db.execute('SELECT * FROM favorites');
+	
+	while(rows.isValidRow()){
+		author = rows.fieldByName('author');
+		title = rows.fieldByName('title');
+		image = rows.fieldByName('image');
+		urls = rows.fieldByName('url');
+		id = rows.fieldByName('id');
+		
+		row = Ti.UI.createTableViewRow({
+			height : 'auto',
+			hasChild : true,
+			id : id
+		});
+		
+		var lbl1 = Ti.UI.createLabel({
+			text : title,
+			font : {fontSize : 9},
+			left : 80,
+			top : 0,
+			textAlign : 'center'
+		});
+		
+		var lbl2 = Ti.UI.createLabel({
+			text : "by " + author,
+			font : {fontSize : 8},
+			top : 40,
+			left : 80,
+			textAlign : 'center'
+		});
+		
+		var img = Ti.UI.createImageView({
+			image : image,
+			left : 5
+		});
+		
+		row.add(lbl1);
+		row.add(lbl2);
+		row.add(img);
+		rowData.push(row);
+		rows.next();
+	}
+	table2.setData(rowData);
+	db.close();
+};
+
+var favWin = Ti.UI.createWindow({
+	title : "Favorites",
+	backgroundColor : "#909090"
+});
+
+//create our table to hold our favorite posts
+var table2 = Ti.UI.createTableView({
+	backgroundColor : "#909090"
+});
+
+//create a eventlistener for table2
+table2.addEventListener("click", function(e){
+	var infoWin = Ti.UI.createWindow({
+		title : author,
+		backgroundColor : "#909090"
+	});
+	
+	var infoScrol2 = Ti.UI.createScrollView({
+		backgroundColor : "#909090"
+	});
+	
+	var infoLbl2 = Ti.UI.createLabel({
+		backgroundColor : "#909090",
+		height : 120,
+		left : 10, 
+		top : 0,
+		right : 10,
+		text : title,
+		textAlign : "center",
+		font : {fontSize : 14}
+	});
+	
+	var infoWeb2 = Ti.UI.createWebView({
+		url : urls,
+		top : 120,
+		left : 0,
+		right : 0,
+		bottom : 0,
+		height : "auto"
+	});
+	
+	//infoWin2.setRightNavButton(editBtn);
+	infoScroll2.add(infoWeb2);
+	infoScroll2.add(infoLbl2);
+	infoWin2.add(infoScroll2ß);
+	navWin.openWindow(infoWin2, {animated : true});
+});
+
+favWin.add(table2);

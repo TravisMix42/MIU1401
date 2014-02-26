@@ -6,7 +6,6 @@
 //include files
 Ti.include("main.js");
 
-
 //create our main window
 var main = Ti.UI.createWindow({
 	title : "Login",

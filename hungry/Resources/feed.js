@@ -132,6 +132,7 @@ editBtn.addEventListener("click", function(){
 	Ti.API.info("author: " + jsonData.data.children[e.index].data.author + "img: " + jsonData.data.children[e.index].data.thumbnail + 
 	"url: " + jsonData.data.children[e.index].data.url);
 	db.close();
+	createRows();
 });
 
 	

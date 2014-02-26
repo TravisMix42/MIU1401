@@ -6,6 +6,7 @@
 //include needed files
 Ti.include("feed.js");
 Ti.include("fav.js");
+createRows();
 
 //create our database
 var db = Ti.Database.open('myDb');
