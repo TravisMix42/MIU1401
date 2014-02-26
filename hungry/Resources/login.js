@@ -61,7 +61,7 @@ subBtn.addEventListener("click", function(){
 	var passTest = uPassword.value.toString();
 	
 	
-	if(nameTest == "" && passTest == ""){
+	if(nameTest == "Testname" && passTest == "Testpassword"){
 		navWin.openWindow(appMain, {animated : true});
 	}
 	else{

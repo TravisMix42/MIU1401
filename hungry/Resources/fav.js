@@ -12,6 +12,9 @@ var image;
 var urls;
 var id;
 var row;
+var lbl1;
+var lbl2;
+var img;
 
 
 
@@ -33,10 +36,11 @@ var createRows = function(){
 		
 		row = Ti.UI.createTableViewRow({
 			height : 'auto',
+			hasChild : true,
 			id : id
 		});
 		
-		var lbl1 = Ti.UI.createLabel({
+		lbl1 = Ti.UI.createLabel({
 			text : title,
 			font : {fontSize : 9},
 			left : 80,
@@ -44,7 +48,7 @@ var createRows = function(){
 			textAlign : 'center'
 		});
 		
-		var lbl2 = Ti.UI.createLabel({
+		lbl2 = Ti.UI.createLabel({
 			text : "by " + author,
 			font : {fontSize : 8},
 			top : 40,
@@ -52,7 +56,7 @@ var createRows = function(){
 			textAlign : 'center'
 		});
 		
-		var img = Ti.UI.createImageView({
+		img = Ti.UI.createImageView({
 			image : image,
 			left : 5
 		});
@@ -67,6 +71,7 @@ var createRows = function(){
 	db.close();
 };
 
+
 var favWin = Ti.UI.createWindow({
 	title : "Favorites",
 	backgroundColor : "#909090"
@@ -75,6 +80,48 @@ var favWin = Ti.UI.createWindow({
 //create our table to hold our favorite posts
 var table2 = Ti.UI.createTableView({
 	backgroundColor : "#909090"
+});
+
+//open full favorited post
+table2.addEventListener("click", function(e){
+	var db = Ti.Database.open('myDb');
+	var viewer = db.execute('SELECT * FROM favorites WHERE ID=?', e.rowData.id);
+	
+	var infoWin3 = Ti.UI.createWindow({
+		title : viewer.fieldByName('author'),
+		backgroundColor : "#909090"
+	});
+	
+	var infoScroll3 = Ti.UI.createScrollView({
+		backgroundColor : "#909090"
+	});
+	
+	var infoLbl3 = Ti.UI.createLabel({
+		backgroundColor : "#909090",
+		height : 120,
+		left : 10, 
+		top : 0,
+		right : 10,
+		text : viewer.fieldByName('title'),
+		textAlign : "center",
+		font : {fontSize : 14}
+	});
+	
+	var infoWeb3 = Ti.UI.createWebView({
+		url : viewer.fieldByName('url'),
+		top : 120,
+		left : 0,
+		right : 0,
+		bottom : 0,
+		height : "auto"
+	});
+	
+	infoScroll3.add(infoLbl3);
+	infoScroll3.add(infoWeb3);
+	infoWin3.add(infoScroll3);
+	navWin.openWindow(infoWin3, {animated : true});
+	
+	db.close();
 });
 
 //create a edit button in our nav bar to handle deleting stuff from the database
