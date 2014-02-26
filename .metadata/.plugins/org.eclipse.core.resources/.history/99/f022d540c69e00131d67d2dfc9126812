@@ -1,0 +1,10 @@
+//feed.js for hungry app
+//by Travis A. Mix
+//on Febuary 26, 2014
+//for Doug Arley asdi 1402 week 4
+
+
+var feedWin = Ti.UI.createWindow({
+	title : "Reddit Feed",
+	backgroundColor : "#909090"
+});

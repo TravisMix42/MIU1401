@@ -9,7 +9,7 @@ Ti.include("main.js");
 
 //create our main window
 var main = Ti.UI.createWindow({
-	title : "login",
+	title : "Login",
 	backgroundColor : "#909090"
 });
 
@@ -58,19 +58,20 @@ var subBtn = Ti.UI.createButton({
 
 //submit button event listener to open the main login screen
 subBtn.addEventListener("click", function(){
-	//debug make sure its working first
-	Ti.API.info("submit button clicked!");
 	var nameTest = uName.value.toString();
 	var passTest = uPassword.value.toString();
-	Ti.API.info("Username: " + nameTest + " Password: " + passTest);
-	//end debug
 	
-	if(nameTest == "Testname" && passTest == "Testpassword"){
+	
+	if(nameTest == "" && passTest == ""){
 		navWin.openWindow(appMain, {animated : true});
 	}
 	else{
 		alert("Wrong username or password");
 	}
+	
+	//clear the username and password values 
+	uName.value = "";
+	uPassword.value = "";
 });
 
 main.add(subBtn);
